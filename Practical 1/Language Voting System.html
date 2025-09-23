@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Voting System</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      font-size: 30px;
+    }
+    button {
+      margin: 5px;
+      padding: 15px;
+      font-size: 25px;
+    }
+    p {
+      font-size: 25px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Vote for Your Favorite Language</h2>
+
+  <button onclick="vote('JavaScript')">JavaScript</button>
+  <button onclick="vote('Python')">Python</button>
+  <button onclick="vote('Java')">Java</button>
+
+  <p id="js">JavaScript: 0</p>
+  <p id="py">Python: 0</p>
+  <p id="java">Java: 0</p>
+
+  <script>
+    let votes={
+      JavaScript:0,
+      Python:0,
+      Java:0
+    };
+    function vote(language){
+      votes[language]++;
+      showVotes();
+    }
+    function showVotes(){
+      document.getElementById("js").innerText="JavaScript:"+votes.JavaScript;
+      document.getElementById("py").innerText="Python:"+votes.Python;
+      document.getElementById("java").innerText="Java:"+votes.Java;
+    }
+    setInterval(()=>{
+      let langs=["JavaScript","Python","Java"];
+      let random=langs[Math.floor(Math.random()*langs.length)];
+      votes[random]++;
+      showVotes();
+    },2000);
+    showVotes();
+  </script>
+
+</body>
+</html>

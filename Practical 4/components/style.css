@@ -1,0 +1,588 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+div {
+    text-align: center;
+    margin: 50px auto;
+    padding: 40px;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 30px;
+    max-width: 500px;
+    box-shadow: 
+        0 20px 40px rgba(102, 126, 234, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.count {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 40px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, #ffffff, #f8f9fa, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+    to { text-shadow: 0 0 30px rgba(255, 255, 255, 0.8); }
+}
+
+button {
+    margin: 12px 8px;
+    padding: 15px 30px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    min-width: 160px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+button:nth-of-type(1),
+button:nth-of-type(2) {
+    background: linear-gradient(135deg, #56ab2f, #a8e6cf);
+    color: #ffffff;
+    box-shadow: 0 8px 25px rgba(86, 171, 47, 0.3);
+}
+
+button:nth-of-type(1):hover,
+button:nth-of-type(2):hover {
+    background: linear-gradient(135deg, #4e9f27, #96d9b8);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(86, 171, 47, 0.4);
+}
+
+button:nth-of-type(3),
+button:nth-of-type(4) {
+    background: linear-gradient(135deg, #ff6b9d, #ffa8cc);
+    color: #ffffff;
+    box-shadow: 0 8px 25px rgba(255, 107, 157, 0.3);
+}
+
+button:nth-of-type(3):hover,
+button:nth-of-type(4):hover {
+    background: linear-gradient(135deg, #ff5a8a, #ff95b8);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(255, 107, 157, 0.4);
+}
+
+button:nth-of-type(5) {
+    background: linear-gradient(135deg, #a8caba, #5d4e75);
+    color: #ffffff;
+    box-shadow: 0 8px 25px rgba(168, 202, 186, 0.3);
+}
+
+button:nth-of-type(5):hover {
+    background: linear-gradient(135deg, #96b8a8, #4a3c5f);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(168, 202, 186, 0.4);
+}
+
+button:active {
+    transform: translateY(-2px) scale(0.98);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+div::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    top: 20%;
+    left: 20%;
+    animation: float 6s ease-in-out infinite;
+    box-shadow: 
+        40px 80px 0 rgba(255, 255, 255, 0.4),
+        -40px 60px 0 rgba(255, 255, 255, 0.3),
+        60px 20px 0 rgba(255, 255, 255, 0.5),
+        -20px -20px 0 rgba(255, 255, 255, 0.4);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+@media (max-width: 768px) {
+    div {
+        padding: 30px 20px;
+        margin: 20px;
+        max-width: 90%;
+    }
+    
+    .count {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+    
+    button {
+        margin: 8px 4px;
+        padding: 12px 24px;
+        font-size: 12px;
+        min-width: 140px;
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    div {
+        padding: 25px 15px;
+    }
+    
+    .count {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+    
+    button {
+        padding: 10px 20px;
+        font-size: 11px;
+        min-width: 120px;
+        width: 90%;
+    }
+} */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+    animation: backgroundShift 10s ease-in-out infinite;
+}
+
+@keyframes backgroundShift {
+    0%, 100% { background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%); }
+    50% { background: linear-gradient(135deg, #16213e 0%, #0f0f23 50%, #1a1a2e 100%); }
+}
+
+.counter {
+    text-align: center;
+    margin: 60px auto;
+    padding: 50px 40px;
+    font-family: 'Inter', sans-serif;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    max-width: 600px;
+    backdrop-filter: blur(20px);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease-out, floatContainer 6s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatContainer {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.counter::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmerTop 3s linear infinite;
+}
+
+@keyframes shimmerTop {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.counter h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 50px 0;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textGlow 2s ease-in-out infinite alternate, slideInFromLeft 0.6s ease-out 0.2s both;
+}
+
+@keyframes textGlow {
+    from { 
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        filter: brightness(1);
+    }
+    to { 
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+        filter: brightness(1.2);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.counter button {
+    display: inline-block;
+    margin: 10px 8px;
+    padding: 16px 32px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    min-width: 150px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInScale 0.5s ease-out both;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.counter button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.counter button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.6s ease;
+}
+
+.counter button:hover::after {
+    width: 200px;
+    height: 200px;
+}
+
+.counter button:hover {
+    transform: translateY(-2px) scale(1.02);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 10px 25px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        0 0 20px rgba(255, 255, 255, 0.1);
+    animation: buttonPulse 0.3s ease-out;
+}
+
+@keyframes buttonPulse {
+    0% { transform: translateY(-2px) scale(1.02); }
+    50% { transform: translateY(-4px) scale(1.05); }
+    100% { transform: translateY(-2px) scale(1.02); }
+}
+
+.counter button:hover::before {
+    opacity: 1;
+}
+
+.counter button:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 
+        0 5px 15px rgba(0, 0, 0, 0.2),
+        inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: buttonClick 0.15s ease-out;
+}
+
+@keyframes buttonClick {
+    0% { transform: translateY(0) scale(0.98); }
+    50% { transform: translateY(2px) scale(0.95); }
+    100% { transform: translateY(0) scale(0.98); }
+}
+
+.counter button:focus {
+    outline: none;
+    box-shadow: 
+        0 10px 25px rgba(0, 0, 0, 0.3),
+        0 0 0 2px rgba(99, 102, 241, 0.5);
+}
+
+/* Button grid layout for better organization */
+.button-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 30px 0;
+    animation: slideInFromBottom 0.8s ease-out 0.4s both;
+}
+
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.button-grid button {
+    margin: 0;
+}
+
+.button-grid button:nth-child(1) { animation-delay: 0.5s; }
+.button-grid button:nth-child(2) { animation-delay: 0.6s; }
+.button-grid button:nth-child(3) { animation-delay: 0.7s; }
+.button-grid button:nth-child(4) { animation-delay: 0.8s; }
+.button-grid button:nth-child(5) { animation-delay: 0.9s; }
+
+.reset-button {
+    grid-column: 1 / -1;
+    background: rgba(239, 68, 68, 0.1) !important;
+    border-color: rgba(239, 68, 68, 0.3) !important;
+    animation: resetButtonGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes resetButtonGlow {
+    from { 
+        box-shadow: 0 0 5px rgba(239, 68, 68, 0.3);
+    }
+    to { 
+        box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+    }
+}
+
+.reset-button:hover {
+    background: rgba(239, 68, 68, 0.2) !important;
+    border-color: rgba(239, 68, 68, 0.4) !important;
+    animation: resetButtonPulse 0.3s ease-out;
+}
+
+@keyframes resetButtonPulse {
+    0% { transform: translateY(-2px) scale(1.02); }
+    50% { transform: translateY(-4px) scale(1.05); box-shadow: 0 0 25px rgba(239, 68, 68, 0.8); }
+    100% { transform: translateY(-2px) scale(1.02); }
+}
+
+/* Subtle animation for the counter value */
+.counter h1 {
+    animation: textGlow 2s ease-in-out infinite alternate, slideInFromLeft 0.6s ease-out 0.2s both, counterValueChange 0.3s ease-out;
+}
+
+@keyframes counterPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes counterValueChange {
+    0% { 
+        transform: scale(1);
+        filter: brightness(1);
+    }
+    50% { 
+        transform: scale(1.1);
+        filter: brightness(1.3);
+    }
+    100% { 
+        transform: scale(1);
+        filter: brightness(1);
+    }
+}
+
+/* Add floating particles animation */
+.counter::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    top: 10%;
+    left: 10%;
+    animation: floatingParticles 8s ease-in-out infinite;
+    box-shadow: 
+        50px 100px 0 rgba(255, 255, 255, 0.4),
+        -30px 80px 0 rgba(255, 255, 255, 0.3),
+        80px 30px 0 rgba(255, 255, 255, 0.5),
+        -50px -10px 0 rgba(255, 255, 255, 0.4),
+        20px -20px 0 rgba(255, 255, 255, 0.3);
+}
+
+@keyframes floatingParticles {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.6;
+    }
+    25% { 
+        transform: translateY(-20px) rotate(90deg);
+        opacity: 1;
+    }
+    50% { 
+        transform: translateY(-10px) rotate(180deg);
+        opacity: 0.8;
+    }
+    75% { 
+        transform: translateY(-30px) rotate(270deg);
+        opacity: 0.9;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .counter {
+        margin: 30px 20px;
+        padding: 40px 30px;
+        max-width: none;
+    }
+    
+    .counter h1 {
+        font-size: 3rem;
+        margin-bottom: 40px;
+    }
+    
+    .button-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .counter button {
+        padding: 14px 28px;
+        font-size: 14px;
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .counter {
+        padding: 30px 20px;
+        margin: 20px 15px;
+    }
+    
+    .counter h1 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+    
+    .counter button {
+        padding: 12px 24px;
+        font-size: 13px;
+    }
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+    .counter {
+        background: rgba(255, 255, 255, 0.03);
+        border-color: rgba(255, 255, 255, 0.08);
+    }
+    
+    .counter button {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.15);
+    }
+    
+    .counter button:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.25);
+    }
+}
