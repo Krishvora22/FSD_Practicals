@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f8ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+input, select, button {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+button {
+  background: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background: #45a049;
+}

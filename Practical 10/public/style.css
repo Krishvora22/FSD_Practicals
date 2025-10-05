@@ -1,0 +1,19 @@
+body {
+  font-family: monospace;
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 20px;
+}
+
+h1 {
+  color: #00ffcc;
+}
+
+pre {
+  background: #252526;
+  padding: 15px;
+  border-radius: 10px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
